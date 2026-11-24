@@ -17,6 +17,17 @@ outlines.
 All headings are white. Grey outline borders are removed everywhere. Blue focus rings stay, and
 `---` dividers in notes stay visible.
 
+## Customising colours
+
+Install the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) community plugin, then open
+**Settings → Style Settings → Pizdec Dark**. Every colour has a picker, grouped into Surfaces, Text, Accents
+and Code highlighting, with a reset arrow to go back to the default. Colours ripple: change the editor
+background and the sidebars follow (unless you set Sidebars separately), and hover tints, highlights and
+scrollbars are mixed from their base colours.
+
+The main accent (links, tags, buttons, selection) is Obsidian's own **Settings → Appearance → Accent color**;
+the theme's default is `#1e88e5`.
+
 ## NoteBoard
 
 If the [NoteBoard](https://github.com/sennafaris28/noteboard) plugin (1.1.0+) is installed, the

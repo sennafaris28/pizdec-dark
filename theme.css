@@ -13,6 +13,160 @@
               "today" markers)
    ============================================================ */
 
+/* @settings
+
+name: Pizdec Dark
+id: pizdec-dark
+settings:
+  -
+    id: pz-info
+    title: "Colours"
+    type: info-text
+    description: "Every colour of the theme. Each one ripples through everything built on it (e.g. Editor background also sets the sidebars, unless you set Sidebars separately). Use the reset arrow next to a colour to go back to the default."
+  -
+    id: pz-surfaces
+    title: "Surfaces"
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: pz-bg-0
+    title: "Editor background"
+    description: "Main background: editor, title bar, board, settings nav."
+    type: variable-color
+    format: hex
+    default: '#161a1f'
+  -
+    id: pz-sidebar
+    title: "Sidebars"
+    description: "Left/right sidebars and the ribbon. Follows Editor background until you change it."
+    type: variable-color
+    format: hex
+    default: '#161a1f'
+  -
+    id: pz-bg-1
+    title: "Raised base"
+    description: "Code blocks, inputs, alternating table rows."
+    type: variable-color
+    format: hex
+    default: '#1b1e22'
+  -
+    id: pz-bg-2
+    title: "Panels"
+    description: "Modals, status bar, settings content, table headers, board columns."
+    type: variable-color
+    format: hex
+    default: '#212427'
+  -
+    id: pz-bg-3
+    title: "Panels — hover"
+    description: "Hovered buttons, setting cards."
+    type: variable-color
+    format: hex
+    default: '#2b2f32'
+  -
+    id: pz-line
+    title: "Cards & dividers"
+    description: "Board cards and fields, --- dividers, table borders, hover tint."
+    type: variable-color
+    format: hex
+    default: '#414a4c'
+  -
+    id: pz-line-strong
+    title: "Cards — hover"
+    type: variable-color
+    format: hex
+    default: '#4b5558'
+  -
+    id: pz-texts
+    title: "Text"
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: pz-text
+    title: "Text"
+    type: variable-color
+    format: hex
+    default: '#d6dce2'
+  -
+    id: pz-text-muted
+    title: "Muted text"
+    type: variable-color
+    format: hex
+    default: '#98a1a8'
+  -
+    id: pz-text-faint
+    title: "Faint text"
+    description: "Placeholders, code comments."
+    type: variable-color
+    format: hex
+    default: '#646d74'
+  -
+    id: pz-accents
+    title: "Accents"
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: pz-accent-info
+    title: "Main accent"
+    description: "Set it in Settings → Appearance → Accent color (Obsidian's own picker). Links, tags, buttons, selection, quotes, bullets and the active-tab edge all follow it, hover and pressed shades included. The theme's default is #1e88e5."
+    type: info-text
+  -
+    id: pz-accent-mid
+    title: "Mid accent"
+    description: "Inline code, checkboxes, scrollbars."
+    type: variable-color
+    format: hex
+    default: '#3bb8e2'
+  -
+    id: pz-accent-2
+    title: "Pop accent"
+    description: "Caret, ==highlights==, NoteBoard today marker."
+    type: variable-color
+    format: hex
+    default: '#59e7df'
+  -
+    id: pz-unresolved
+    title: "Unresolved links"
+    description: "Links to notes that don't exist yet."
+    type: variable-color
+    format: hex
+    default: '#c97a7a'
+  -
+    id: pz-code
+    title: "Code highlighting"
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: pz-code-function
+    title: "Functions"
+    type: variable-color
+    format: hex
+    default: '#74b8f5'
+  -
+    id: pz-code-keyword
+    title: "Keywords"
+    type: variable-color
+    format: hex
+    default: '#e5739a'
+  -
+    id: pz-code-string
+    title: "Strings"
+    type: variable-color
+    format: hex
+    default: '#7fc99a'
+  -
+    id: pz-code-value
+    title: "Numbers & values"
+    type: variable-color
+    format: hex
+    default: '#d9a066'
+
+*/
+
 /* Accent is theme-agnostic: Obsidian derives interactive colors from these. */
 .theme-dark,
 .theme-light {
@@ -20,9 +174,11 @@
   --accent-s: 79%;
   --accent-l: 51%;
 
-  --color-accent: #1e88e5;
-  --color-accent-1: #3d9bec; /* lighter hover */
-  --color-accent-2: #1670c4; /* darker active */
+  /* Derived from the h/s/l above, which Obsidian's Appearance → Accent color
+     overrides, so that one picker drives all three. */
+  --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l)); /* #1e88e5 */
+  --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 7%)); /* lighter hover */
+  --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 8%)); /* darker active */
 }
 
 /* ------------------------------------------------------------
@@ -36,12 +192,18 @@
   --pz-bg-3: #2b2f32; /* hovered / elevated secondary */
   --pz-line: #414a4c; /* borders & dividers */
   --pz-line-strong: #4b5558;
-  --pz-sidebar: #161a1f; /* left/right sidebars — same tone as the editor; the shadow separates them */
+  --pz-sidebar: var(--pz-bg-0); /* left/right sidebars — same tone as the editor; the shadow separates them */
 
   --pz-accent-2: #59e7df; /* secondary accent: small pops only */
   --pz-accent-mid: #3bb8e2; /* sky, halfway between #1e88e5 and #59e7df */
-  --pz-raised: #414a4c;   /* foreground 2 as a surface (cards, fields) */
-  --pz-raised-hover: #4b5558;
+  --pz-raised: var(--pz-line);   /* foreground 2 as a surface (cards, fields) */
+  --pz-raised-hover: var(--pz-line-strong);
+
+  --pz-unresolved: #c97a7a; /* links to notes that don't exist yet */
+  --pz-code-function: #74b8f5;
+  --pz-code-keyword: #e5739a;
+  --pz-code-string: #7fc99a;
+  --pz-code-value: #d9a066;
 
   --pz-text: #d6dce2;
   --pz-text-muted: #98a1a8;
@@ -59,8 +221,8 @@
   --background-modifier-border-hover: transparent;
   --hr-color: var(--pz-line); /* note dividers (---) stay visible */
   --background-modifier-border-focus: var(--color-accent);
-  --background-modifier-hover: rgba(65, 74, 76, 0.28);
-  --background-modifier-active-hover: rgba(65, 74, 76, 0.42);
+  --background-modifier-hover: color-mix(in srgb, var(--pz-line) 28%, transparent);
+  --background-modifier-active-hover: color-mix(in srgb, var(--pz-line) 42%, transparent);
   --background-modifier-form-field: var(--pz-bg-1);
 
   /* --- Text --- */
@@ -80,7 +242,7 @@
   --text-accent: var(--color-accent);
   --text-accent-hover: var(--color-accent-1);
   --text-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.25);
-  --text-highlight-bg: rgba(89, 231, 223, 0.22); /* ==highlight== */
+  --text-highlight-bg: color-mix(in srgb, var(--pz-accent-2) 22%, transparent); /* ==highlight== */
 
   /* --- Interactive controls --- */
   --interactive-normal: var(--pz-bg-2);
@@ -110,7 +272,7 @@
   /* --- Links --- */
   --link-color: var(--color-accent);
   --link-color-hover: var(--color-accent-1);
-  --link-unresolved-color: #c97a7a;
+  --link-unresolved-color: var(--pz-unresolved);
 
   /* --- Headings tint --- */
   --h1-color: var(--text-normal);
@@ -124,11 +286,11 @@
   --code-background: var(--pz-bg-1);
   --code-normal: var(--pz-accent-mid); /* inline `code` and plain code block text */
   --code-comment: var(--pz-text-faint);
-  --code-function: #74b8f5;
-  --code-keyword: #e5739a;
-  --code-string: #7fc99a;
+  --code-function: var(--pz-code-function);
+  --code-keyword: var(--pz-code-keyword);
+  --code-string: var(--pz-code-string);
   --code-property: var(--color-accent);
-  --code-value: #d9a066;
+  --code-value: var(--pz-code-value);
 
   /* --- Inline tags & chips --- */
   --tag-color: var(--color-accent);
@@ -137,8 +299,8 @@
 
   /* --- Scrollbars --- */
   --scrollbar-bg: transparent;
-  --scrollbar-thumb-bg: rgba(59, 184, 226, 0.35);        /* sky */
-  --scrollbar-active-thumb-bg: rgba(59, 184, 226, 0.75);
+  --scrollbar-thumb-bg: color-mix(in srgb, var(--pz-accent-mid) 35%, transparent);        /* sky */
+  --scrollbar-active-thumb-bg: color-mix(in srgb, var(--pz-accent-mid) 75%, transparent);
 
   /* --- Dividers / tables --- */
   /* No hard lines between panes — we separate with elevation instead.
