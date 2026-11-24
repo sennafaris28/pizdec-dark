@@ -6,9 +6,11 @@
      #161a1f  main background (editor, board)
      #212427  foreground 1 (sidebars, panels, modals)
      #414a4c  foreground 2 (borders, dividers, elevated chrome)
-     #1e88e5  main accent       (HSL 208, 79%, 51%)
-     #59e7df  secondary accent  (scrollbars, inline code, bullets,
-              checkboxes, quotes, caret, active file/tab, ==highlights==)
+     #1e88e5  main accent       (HSL 208, 79%, 51%): links, tags, buttons,
+              selection, quotes, bullets
+     #3bb8e2  sky, the midpoint (scrollbars, checkboxes, code text)
+     #59e7df  secondary accent  (small pops only: caret, ==highlights==,
+              "today" markers)
    ============================================================ */
 
 /* Accent is theme-agnostic: Obsidian derives interactive colors from these. */
@@ -36,7 +38,8 @@
   --pz-line-strong: #4b5558;
   --pz-sidebar: #212427; /* left/right sidebars — a touch above the editor base */
 
-  --pz-accent-2: #59e7df; /* secondary accent */
+  --pz-accent-2: #59e7df; /* secondary accent: small pops only */
+  --pz-accent-mid: #3bb8e2; /* sky, halfway between #1e88e5 and #59e7df */
   --pz-raised: #414a4c;   /* foreground 2 as a surface (cards, fields) */
   --pz-raised-hover: #4b5558;
 
@@ -66,16 +69,14 @@
   --text-faint: var(--pz-text-faint);
   --text-on-accent: #ffffff;
 
-  /* --- Secondary accent spots --- */
+  /* --- Accent spots: blue for structure, sky for mid-weight, cyan for pops --- */
   --caret-color: var(--pz-accent-2);
-  --list-marker-color: rgba(89, 231, 223, 0.7);
-  --list-marker-color-hover: var(--pz-accent-2);
-  --blockquote-border-color: var(--pz-accent-2);
-  --checkbox-color: var(--pz-accent-2);
-  --checkbox-color-hover: #7eede7;
+  --list-marker-color: hsla(var(--accent-h), var(--accent-s), 60%, 0.85);
+  --list-marker-color-hover: var(--color-accent-1);
+  --blockquote-border-color: var(--color-accent);
+  --checkbox-color: var(--pz-accent-mid);
+  --checkbox-color-hover: var(--pz-accent-2);
   --checkbox-marker-color: var(--pz-bg-0);
-  --nav-item-color-active: var(--pz-accent-2);
-  --tab-text-color-focused-active-current: var(--pz-accent-2);
   --text-accent: var(--color-accent);
   --text-accent-hover: var(--color-accent-1);
   --text-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.25);
@@ -121,7 +122,7 @@
 
   /* --- Code --- */
   --code-background: var(--pz-bg-1);
-  --code-normal: var(--pz-accent-2); /* inline `code` */
+  --code-normal: var(--pz-accent-mid); /* inline `code` and plain code block text */
   --code-comment: var(--pz-text-faint);
   --code-function: #74b8f5;
   --code-keyword: #e5739a;
@@ -136,8 +137,8 @@
 
   /* --- Scrollbars --- */
   --scrollbar-bg: transparent;
-  --scrollbar-thumb-bg: rgba(89, 231, 223, 0.35);        /* secondary accent */
-  --scrollbar-active-thumb-bg: rgba(89, 231, 223, 0.75);
+  --scrollbar-thumb-bg: rgba(59, 184, 226, 0.35);        /* sky */
+  --scrollbar-active-thumb-bg: rgba(59, 184, 226, 0.75);
 
   /* --- Dividers / tables --- */
   /* No hard lines between panes — we separate with elevation instead.

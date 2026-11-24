@@ -10,8 +10,9 @@ outlines.
 | `#161a1f` | main background (editor, board) |
 | `#212427` | foreground 1: sidebars, panels, modals |
 | `#414a4c` | foreground 2: raised cards and fields, dividers |
-| `#1e88e5` | main accent: links, buttons, tags, focus rings, selection |
-| `#59e7df` | secondary accent: scrollbars, inline code, bullets, checkboxes, quotes, caret, active file and tab, `==highlights==` |
+| `#1e88e5` | main accent: links, buttons, tags, focus rings, selection, bullets, quote bars |
+| `#3bb8e2` | sky, halfway between the two accents: inline code and code text, checkboxes, scrollbars |
+| `#59e7df` | secondary accent, small pops only: caret, `==highlights==`, checkbox hover |
 
 All headings are white. Grey outline borders are removed everywhere. Blue focus rings stay, and
 `---` dividers in notes stay visible.
