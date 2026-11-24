@@ -3,8 +3,8 @@
    by pizdec.tv
 
    Palette — cool graphite
-     #161a1f  main background (editor, board)
-     #212427  foreground 1 (sidebars, panels, modals)
+     #161a1f  main background (editor, sidebars, board)
+     #212427  foreground 1 (panels, modals)
      #414a4c  foreground 2 (borders, dividers, elevated chrome)
      #1e88e5  main accent       (HSL 208, 79%, 51%): links, tags, buttons,
               selection, quotes, bullets
@@ -32,11 +32,11 @@
   /* Brand palette — neutral graphite (blue de-emphasized) */
   --pz-bg-0: #161a1f; /* base (kept) */
   --pz-bg-1: #1b1e22; /* base, slightly raised (alt rows, input bg, tab chips) */
-  --pz-bg-2: #212427; /* secondary surface (sidebars, panels) */
+  --pz-bg-2: #212427; /* secondary surface (panels, modals) */
   --pz-bg-3: #2b2f32; /* hovered / elevated secondary */
   --pz-line: #414a4c; /* borders & dividers */
   --pz-line-strong: #4b5558;
-  --pz-sidebar: #212427; /* left/right sidebars — a touch above the editor base */
+  --pz-sidebar: #161a1f; /* left/right sidebars — same tone as the editor; the shadow separates them */
 
   --pz-accent-2: #59e7df; /* secondary accent: small pops only */
   --pz-accent-mid: #3bb8e2; /* sky, halfway between #1e88e5 and #59e7df */
@@ -160,6 +160,22 @@
 /* Modal backdrop a touch darker so panels read as elevated. */
 .theme-dark .modal-bg { background: rgba(10, 12, 15, 0.55); }
 
+/* Settings: dark nav pane on the #161a1f base with a light shadow, content
+   one step up (#212427), setting cards one more (#2b2f32) — same depth
+   order as the workspace sidebars. */
+.theme-dark .mod-settings .vertical-tab-header {
+  background: var(--pz-bg-0);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.28);
+  position: relative;
+  z-index: 1;
+}
+.theme-dark .mod-settings .vertical-tab-content {
+  background: var(--pz-bg-2);
+}
+.theme-dark .mod-settings .setting-items {
+  background: var(--pz-bg-3);
+}
+
 
 /* Accent focus ring on inputs. */
 .theme-dark input:focus,
@@ -170,7 +186,7 @@
 
 /* ------------------------------------------------------------
    Panes & elevation — no border lines; depth comes from shadow.
-   Sidebars (#212427) float above the #161a1f editor base.
+   Sidebars share the #161a1f base; a soft shadow sets them off the editor.
    ------------------------------------------------------------ */
 
 /* Editor base sits at the back. */
@@ -295,7 +311,7 @@
 /* Sidebar tabs get the same card treatment, minus the heavy shadow. */
 .theme-dark .mod-left-split .workspace-tab-header.is-active,
 .theme-dark .mod-right-split .workspace-tab-header.is-active {
-  background: var(--background-primary) !important;
+  background: var(--pz-bg-2) !important; /* lifts off the #161a1f sidebar */
   box-shadow:
     inset 0 2px 0 0 var(--color-accent),
     0 3px 10px rgba(0, 0, 0, 0.3);
@@ -334,7 +350,7 @@
 /* ------------------------------------------------------------
    Sidebar uniformity — every surface inside the left/right split
    (ribbon, tab bar, nav header/toolbar, file list) shares one
-   color (#212427). Kills the default lighter file-explorer panel.
+   color (#161a1f). Kills the default lighter file-explorer panel.
    ------------------------------------------------------------ */
 .theme-dark .mod-left-split .workspace-leaf-content,
 .theme-dark .mod-right-split .workspace-leaf-content,

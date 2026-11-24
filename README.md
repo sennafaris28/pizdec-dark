@@ -7,8 +7,8 @@ outlines.
 
 | Colour | Role |
 |---|---|
-| `#161a1f` | main background (editor, board) |
-| `#212427` | foreground 1: sidebars, panels, modals |
+| `#161a1f` | main background (editor, sidebars, board) |
+| `#212427` | foreground 1: panels, modals |
 | `#414a4c` | foreground 2: raised cards and fields, dividers |
 | `#1e88e5` | main accent: links, buttons, tags, focus rings, selection, bullets, quote bars |
 | `#3bb8e2` | sky, halfway between the two accents: inline code and code text, checkboxes, scrollbars |
