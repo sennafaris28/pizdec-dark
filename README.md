@@ -19,6 +19,10 @@ All headings are white. Grey outline borders are removed everywhere. Blue focus 
 
 ## Customising colours
 
+**Easiest:** install the [Pizdec Palettes](https://github.com/sennafaris28/pizdec-palettes) companion plugin. It gives
+you Pizdec, Navy and Cyberpunk, a **New palette** button for your own named palettes, and a colour picker with live
+preview. It overrides the Style Settings colours below, so you only need one of the two.
+
 Install the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) community plugin, then open
 **Settings → Style Settings → Pizdec Dark**. Every colour has a picker, grouped into Surfaces, Text, Accents
 and Code highlighting, with a reset arrow to go back to the default. Colours ripple: change the editor
@@ -32,6 +36,10 @@ at the bottom of the page (collapsed); it starts as a copy of the Pizdec colours
 The pickers at the top still apply on top of whichever palette is active; reset them to see the palette as it is.
 To back a palette up or move it to another device, use Style Settings' **Export** on the Pizdec Dark section and
 **Import** it there.
+
+**Colour picker.** The theme restyles Style Settings' colour picker to match. On desktop, turn off
+**Settings → Interface → Open settings in new window**: in a separate Settings window the picker can't be dragged
+and draws its colour area wrong (a Style Settings limitation; it works properly in the in-app Settings).
 
 The main accent (links, tags, buttons, selection) is Obsidian's own **Settings → Appearance → Accent color**;
 the theme's default is `#1e88e5`.

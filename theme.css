@@ -601,9 +601,10 @@ settings:
   --pz-code-string: #fcee0a;
   --pz-code-value: #b967ff;
 }
-.pz-palette-cyberpunk .markdown-rendered :is(h1, h2, h3),
-.pz-palette-cyberpunk .cm-s-obsidian :is(.cm-header-1, .cm-header-2, .cm-header-3),
-.pz-palette-cyberpunk .inline-title {
+/* .pz-glow is set by the Pizdec Palettes plugin for palettes with glow on. */
+:is(.pz-palette-cyberpunk, .pz-glow) .markdown-rendered :is(h1, h2, h3),
+:is(.pz-palette-cyberpunk, .pz-glow) .cm-s-obsidian :is(.cm-header-1, .cm-header-2, .cm-header-3),
+:is(.pz-palette-cyberpunk, .pz-glow) .inline-title {
   text-shadow: 0 0 6px color-mix(in srgb, var(--pz-accent-mid) 55%, transparent),
                0 0 18px color-mix(in srgb, var(--pz-accent-mid) 25%, transparent);
 }
@@ -704,6 +705,134 @@ settings:
 .style-settings-container .setting-item[data-id="pz-c2-code-keyword"] .pcr-button { --pcr-color: var(--pz-c2-code-keyword, #e5739a); }
 .style-settings-container .setting-item[data-id="pz-c2-code-string"] .pcr-button { --pcr-color: var(--pz-c2-code-string, #7fc99a); }
 .style-settings-container .setting-item[data-id="pz-c2-code-value"] .pcr-button { --pcr-color: var(--pz-c2-code-value, #d9a066); }
+
+/* ------------------------------------------------------------
+   Colour picker (Pickr, used by Style Settings): restyled to match
+   the theme instead of its default white popup.
+   ------------------------------------------------------------ */
+.theme-dark .pcr-app[data-theme="nano"] {
+  width: 17.5em;
+  padding: 0.75em;
+  gap: 0.75em;
+  background: var(--pz-bg-2);
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--pz-line), 0 14px 40px rgba(0, 0, 0, 0.55);
+  font-family: var(--font-interface);
+}
+.theme-dark .pcr-app[data-theme="nano"] .pcr-selection {
+  height: 13em;
+  grid-gap: 0.7em;
+}
+.theme-dark .pcr-app[data-theme="nano"] .pcr-selection .pcr-color-palette {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.theme-dark .pcr-app[data-theme="nano"] .pcr-selection .pcr-color-palette .pcr-palette {
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.theme-dark .pcr-app[data-theme="nano"] .pcr-selection .pcr-color-preview {
+  margin-left: 0;
+}
+.theme-dark .pcr-app[data-theme="nano"] .pcr-selection .pcr-color-preview .pcr-current-color {
+  width: 2.2em;
+  height: 2.2em;
+  box-shadow: 0 0 0 2px var(--pz-bg-3), 0 0 0 3px var(--pz-line);
+}
+.theme-dark .pcr-app[data-theme="nano"] .pcr-selection .pcr-color-chooser,
+.theme-dark .pcr-app[data-theme="nano"] .pcr-selection .pcr-color-opacity {
+  margin-right: 0;
+  height: 0.7em;
+}
+.theme-dark .pcr-app[data-theme="nano"] .pcr-selection .pcr-color-chooser .pcr-slider,
+.theme-dark .pcr-app[data-theme="nano"] .pcr-selection .pcr-color-opacity .pcr-slider {
+  border-radius: 99px;
+}
+/* The handles: bigger, with a shadow so they read on any colour. */
+.theme-dark .pcr-app .pcr-selection .pcr-picker {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+}
+.theme-dark .pcr-app .pcr-selection .pcr-color-chooser .pcr-picker,
+.theme-dark .pcr-app .pcr-selection .pcr-color-opacity .pcr-picker {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.theme-dark .pcr-app[data-theme="nano"] .pcr-swatches {
+  margin: 0;
+  padding: 0;
+}
+.theme-dark .pcr-app .pcr-swatches > button,
+.theme-dark .pcr-app .pcr-swatches > button::after {
+  border-radius: 6px;
+}
+.theme-dark .pcr-app[data-theme="nano"] .pcr-interaction {
+  padding: 0;
+  margin: 0;
+  gap: 0.4em;
+}
+.theme-dark .pcr-app .pcr-interaction > * {
+  margin: 0;
+}
+.theme-dark .pcr-app .pcr-interaction input {
+  height: auto;
+  padding: 0.5em 0.6em;
+  border-radius: 6px;
+  background: var(--pz-bg-1);
+  color: var(--pz-text-muted);
+  font-size: 0.75em;
+  letter-spacing: 0.04em;
+  box-shadow: none;
+}
+.theme-dark .pcr-app .pcr-interaction input:hover {
+  filter: none;
+  background: var(--pz-bg-3);
+  color: var(--pz-text);
+}
+.theme-dark .pcr-app .pcr-interaction .pcr-result {
+  flex: 1 1 100%;
+  color: var(--pz-text);
+  font-family: var(--font-monospace);
+  font-size: 0.85em;
+  background: var(--pz-bg-1);
+}
+.theme-dark .pcr-app .pcr-interaction .pcr-result::selection {
+  background: var(--color-accent);
+}
+.theme-dark .pcr-app .pcr-interaction .pcr-type {
+  flex: 1 1 0;
+}
+.theme-dark .pcr-app .pcr-interaction .pcr-type.active {
+  background: var(--pz-line);
+  color: var(--pz-text);
+}
+.theme-dark .pcr-app .pcr-interaction .pcr-save,
+.theme-dark .pcr-app .pcr-interaction .pcr-cancel {
+  flex: 1 1 0;
+  font-weight: 600;
+}
+.theme-dark .pcr-app .pcr-interaction .pcr-save {
+  background: var(--color-accent);
+  color: var(--text-on-accent);
+}
+.theme-dark .pcr-app .pcr-interaction .pcr-save:hover {
+  background: var(--color-accent-1);
+}
+.theme-dark .pcr-app .pcr-interaction .pcr-cancel {
+  background: transparent;
+  color: var(--pz-text-muted);
+  box-shadow: inset 0 0 0 1px var(--pz-line);
+}
+.theme-dark .pcr-app .pcr-interaction .pcr-cancel:hover {
+  background: var(--pz-bg-3);
+}
+.theme-dark .pcr-app input:focus,
+.theme-dark .pcr-app input.pcr-active,
+.theme-dark .pcr-app button:focus {
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
 
 /* Modal backdrop a touch darker so panels read as elevated. */
 .theme-dark .modal-bg { background: rgba(10, 12, 15, 0.55); }
@@ -924,4 +1053,11 @@ settings:
   --nk-accent-2: var(--pz-accent-2);
   --nk-on-accent-2: var(--pz-bg-0);
   --nk-modal-bg: var(--pz-bg-0);
+}
+/* Card modal: the body area is the same tone as a note, so the modal reads
+   like the note it opens (panels and fields float on it, as in the note). */
+.theme-dark .nk-card-modal .nk-card-render,
+.theme-dark .nk-card-modal .nk-card-editor-host,
+.theme-dark .nk-card-modal .nk-card-body {
+  background: var(--pz-bg-0);
 }
