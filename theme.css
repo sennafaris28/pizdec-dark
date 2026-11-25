@@ -24,6 +24,29 @@ settings:
     type: info-text
     description: "Every colour of the theme. Each one ripples through everything built on it (e.g. Editor background also sets the sidebars, unless you set Sidebars separately). Use the reset arrow next to a colour to go back to the default."
   -
+    id: pz-palette
+    title: "Palette"
+    description: "A preset for all the colours below. Pickers you set yourself still apply on top of it; reset them to see the palette as it is. Pick My palette 1 or 2 to use your own, set up in their sections at the bottom."
+    type: class-select
+    allowEmpty: false
+    default: pz-palette-default
+    options:
+      -
+        label: "Pizdec (default)"
+        value: pz-palette-default
+      -
+        label: "Navy"
+        value: pz-palette-navy
+      -
+        label: "Cyberpunk"
+        value: pz-palette-cyberpunk
+      -
+        label: "My palette 1"
+        value: pz-palette-custom1
+      -
+        label: "My palette 2"
+        value: pz-palette-custom2
+  -
     id: pz-surfaces
     title: "Surfaces"
     type: heading
@@ -161,6 +184,232 @@ settings:
   -
     id: pz-code-value
     title: "Numbers & values"
+    type: variable-color
+    format: hex
+    default: '#d9a066'
+  -
+    id: pz-c1
+    title: "My palette 1"
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: pz-c1-info
+    title: "Your own palette"
+    description: "Used when Palette (at the top) is set to My palette 1. Starts as a copy of the Pizdec colours; change the ones you want. The pickers above still apply on top."
+    type: info-text
+  -
+    id: pz-c1-bg-0
+    title: "Editor background"
+    type: variable-color
+    format: hex
+    default: '#161a1f'
+  -
+    id: pz-c1-sidebar
+    title: "Sidebars"
+    type: variable-color
+    format: hex
+    default: '#161a1f'
+  -
+    id: pz-c1-bg-1
+    title: "Raised base"
+    type: variable-color
+    format: hex
+    default: '#1b1e22'
+  -
+    id: pz-c1-bg-2
+    title: "Panels"
+    type: variable-color
+    format: hex
+    default: '#212427'
+  -
+    id: pz-c1-bg-3
+    title: "Panels — hover"
+    type: variable-color
+    format: hex
+    default: '#2b2f32'
+  -
+    id: pz-c1-line
+    title: "Cards & dividers"
+    type: variable-color
+    format: hex
+    default: '#414a4c'
+  -
+    id: pz-c1-line-strong
+    title: "Cards — hover"
+    type: variable-color
+    format: hex
+    default: '#4b5558'
+  -
+    id: pz-c1-text
+    title: "Text"
+    type: variable-color
+    format: hex
+    default: '#d6dce2'
+  -
+    id: pz-c1-text-muted
+    title: "Muted text"
+    type: variable-color
+    format: hex
+    default: '#98a1a8'
+  -
+    id: pz-c1-text-faint
+    title: "Faint text"
+    type: variable-color
+    format: hex
+    default: '#646d74'
+  -
+    id: pz-c1-accent-mid
+    title: "Mid accent"
+    type: variable-color
+    format: hex
+    default: '#3bb8e2'
+  -
+    id: pz-c1-accent-2
+    title: "Pop accent"
+    type: variable-color
+    format: hex
+    default: '#59e7df'
+  -
+    id: pz-c1-unresolved
+    title: "Unresolved links"
+    type: variable-color
+    format: hex
+    default: '#c97a7a'
+  -
+    id: pz-c1-code-function
+    title: "Code: functions"
+    type: variable-color
+    format: hex
+    default: '#74b8f5'
+  -
+    id: pz-c1-code-keyword
+    title: "Code: keywords"
+    type: variable-color
+    format: hex
+    default: '#e5739a'
+  -
+    id: pz-c1-code-string
+    title: "Code: strings"
+    type: variable-color
+    format: hex
+    default: '#7fc99a'
+  -
+    id: pz-c1-code-value
+    title: "Code: numbers & values"
+    type: variable-color
+    format: hex
+    default: '#d9a066'
+  -
+    id: pz-c2
+    title: "My palette 2"
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: pz-c2-info
+    title: "Your own palette"
+    description: "Used when Palette (at the top) is set to My palette 2. Starts as a copy of the Pizdec colours; change the ones you want. The pickers above still apply on top."
+    type: info-text
+  -
+    id: pz-c2-bg-0
+    title: "Editor background"
+    type: variable-color
+    format: hex
+    default: '#161a1f'
+  -
+    id: pz-c2-sidebar
+    title: "Sidebars"
+    type: variable-color
+    format: hex
+    default: '#161a1f'
+  -
+    id: pz-c2-bg-1
+    title: "Raised base"
+    type: variable-color
+    format: hex
+    default: '#1b1e22'
+  -
+    id: pz-c2-bg-2
+    title: "Panels"
+    type: variable-color
+    format: hex
+    default: '#212427'
+  -
+    id: pz-c2-bg-3
+    title: "Panels — hover"
+    type: variable-color
+    format: hex
+    default: '#2b2f32'
+  -
+    id: pz-c2-line
+    title: "Cards & dividers"
+    type: variable-color
+    format: hex
+    default: '#414a4c'
+  -
+    id: pz-c2-line-strong
+    title: "Cards — hover"
+    type: variable-color
+    format: hex
+    default: '#4b5558'
+  -
+    id: pz-c2-text
+    title: "Text"
+    type: variable-color
+    format: hex
+    default: '#d6dce2'
+  -
+    id: pz-c2-text-muted
+    title: "Muted text"
+    type: variable-color
+    format: hex
+    default: '#98a1a8'
+  -
+    id: pz-c2-text-faint
+    title: "Faint text"
+    type: variable-color
+    format: hex
+    default: '#646d74'
+  -
+    id: pz-c2-accent-mid
+    title: "Mid accent"
+    type: variable-color
+    format: hex
+    default: '#3bb8e2'
+  -
+    id: pz-c2-accent-2
+    title: "Pop accent"
+    type: variable-color
+    format: hex
+    default: '#59e7df'
+  -
+    id: pz-c2-unresolved
+    title: "Unresolved links"
+    type: variable-color
+    format: hex
+    default: '#c97a7a'
+  -
+    id: pz-c2-code-function
+    title: "Code: functions"
+    type: variable-color
+    format: hex
+    default: '#74b8f5'
+  -
+    id: pz-c2-code-keyword
+    title: "Code: keywords"
+    type: variable-color
+    format: hex
+    default: '#e5739a'
+  -
+    id: pz-c2-code-string
+    title: "Code: strings"
+    type: variable-color
+    format: hex
+    default: '#7fc99a'
+  -
+    id: pz-c2-code-value
+    title: "Code: numbers & values"
     type: variable-color
     format: hex
     default: '#d9a066'
@@ -318,6 +567,143 @@ settings:
   --modal-border-color: transparent;
   --modal-border-width: 0px;
 }
+
+/* ------------------------------------------------------------
+   Palettes — presets picked in Style Settings (a class on <body>).
+   Same specificity as .theme-dark but later, so they replace the
+   defaults; Style Settings' own pickers (body.css-settings-manager)
+   are more specific and still win, so they tweak on top.
+   ------------------------------------------------------------ */
+.pz-palette-navy {
+  --pz-bg-0: #0d1b2a;          /* navy base: editor, sidebars, ribbon */
+  --pz-accent-2: #ff00ff;      /* magenta pops: caret, ==highlight== */
+  --pz-code-keyword: #ffcc00;  /* yellow keywords */
+}
+
+/* Cyberpunk: violet-black night, neon cyan + hot pink, yellow strings,
+   and a soft neon glow on headings. Pairs well with Accent color #ff2a6d. */
+.pz-palette-cyberpunk {
+  --pz-bg-0: #0b0b14;
+  --pz-sidebar: #08080f;
+  --pz-bg-1: #11111e;
+  --pz-bg-2: #161628;
+  --pz-bg-3: #1f1f38;
+  --pz-line: #2e2e52;
+  --pz-line-strong: #3a3a66;
+  --pz-text: #e0e6ff;
+  --pz-text-muted: #9a9cc8;
+  --pz-text-faint: #5c5f8a;
+  --pz-accent-mid: #05d9e8;    /* neon cyan */
+  --pz-accent-2: #ff2a6d;      /* hot pink */
+  --pz-unresolved: #ff7a59;
+  --pz-code-function: #05d9e8;
+  --pz-code-keyword: #ff2a6d;
+  --pz-code-string: #fcee0a;
+  --pz-code-value: #b967ff;
+}
+.pz-palette-cyberpunk .markdown-rendered :is(h1, h2, h3),
+.pz-palette-cyberpunk .cm-s-obsidian :is(.cm-header-1, .cm-header-2, .cm-header-3),
+.pz-palette-cyberpunk .inline-title {
+  text-shadow: 0 0 6px color-mix(in srgb, var(--pz-accent-mid) 55%, transparent),
+               0 0 18px color-mix(in srgb, var(--pz-accent-mid) 25%, transparent);
+}
+
+/* My palette 1 / 2 — colours from their own Style Settings pickers; unset ones
+   fall back to the Pizdec defaults (Sidebars follows Editor background). */
+.pz-palette-custom1 {
+  --pz-bg-0: var(--pz-c1-bg-0, #161a1f);
+  --pz-sidebar: var(--pz-c1-sidebar, var(--pz-bg-0));
+  --pz-bg-1: var(--pz-c1-bg-1, #1b1e22);
+  --pz-bg-2: var(--pz-c1-bg-2, #212427);
+  --pz-bg-3: var(--pz-c1-bg-3, #2b2f32);
+  --pz-line: var(--pz-c1-line, #414a4c);
+  --pz-line-strong: var(--pz-c1-line-strong, #4b5558);
+  --pz-text: var(--pz-c1-text, #d6dce2);
+  --pz-text-muted: var(--pz-c1-text-muted, #98a1a8);
+  --pz-text-faint: var(--pz-c1-text-faint, #646d74);
+  --pz-accent-mid: var(--pz-c1-accent-mid, #3bb8e2);
+  --pz-accent-2: var(--pz-c1-accent-2, #59e7df);
+  --pz-unresolved: var(--pz-c1-unresolved, #c97a7a);
+  --pz-code-function: var(--pz-c1-code-function, #74b8f5);
+  --pz-code-keyword: var(--pz-c1-code-keyword, #e5739a);
+  --pz-code-string: var(--pz-c1-code-string, #7fc99a);
+  --pz-code-value: var(--pz-c1-code-value, #d9a066);
+}
+.pz-palette-custom2 {
+  --pz-bg-0: var(--pz-c2-bg-0, #161a1f);
+  --pz-sidebar: var(--pz-c2-sidebar, var(--pz-bg-0));
+  --pz-bg-1: var(--pz-c2-bg-1, #1b1e22);
+  --pz-bg-2: var(--pz-c2-bg-2, #212427);
+  --pz-bg-3: var(--pz-c2-bg-3, #2b2f32);
+  --pz-line: var(--pz-c2-line, #414a4c);
+  --pz-line-strong: var(--pz-c2-line-strong, #4b5558);
+  --pz-text: var(--pz-c2-text, #d6dce2);
+  --pz-text-muted: var(--pz-c2-text-muted, #98a1a8);
+  --pz-text-faint: var(--pz-c2-text-faint, #646d74);
+  --pz-accent-mid: var(--pz-c2-accent-mid, #3bb8e2);
+  --pz-accent-2: var(--pz-c2-accent-2, #59e7df);
+  --pz-unresolved: var(--pz-c2-unresolved, #c97a7a);
+  --pz-code-function: var(--pz-c2-code-function, #74b8f5);
+  --pz-code-keyword: var(--pz-c2-code-keyword, #e5739a);
+  --pz-code-string: var(--pz-c2-code-string, #7fc99a);
+  --pz-code-value: var(--pz-c2-code-value, #d9a066);
+}
+
+/* Style Settings bug workaround: it sets one swatch colour (--pcr-color) on the
+   whole section, so untouched pickers all showed the last colour in it. Give
+   each swatch the colour actually in use. A colour you pick sets the swatch
+   inline, which still wins. */
+.style-settings-container .setting-item[data-id="pz-bg-0"] .pcr-button { --pcr-color: var(--pz-bg-0); }
+.style-settings-container .setting-item[data-id="pz-sidebar"] .pcr-button { --pcr-color: var(--pz-sidebar); }
+.style-settings-container .setting-item[data-id="pz-bg-1"] .pcr-button { --pcr-color: var(--pz-bg-1); }
+.style-settings-container .setting-item[data-id="pz-bg-2"] .pcr-button { --pcr-color: var(--pz-bg-2); }
+.style-settings-container .setting-item[data-id="pz-bg-3"] .pcr-button { --pcr-color: var(--pz-bg-3); }
+.style-settings-container .setting-item[data-id="pz-line"] .pcr-button { --pcr-color: var(--pz-line); }
+.style-settings-container .setting-item[data-id="pz-line-strong"] .pcr-button { --pcr-color: var(--pz-line-strong); }
+.style-settings-container .setting-item[data-id="pz-text"] .pcr-button { --pcr-color: var(--pz-text); }
+.style-settings-container .setting-item[data-id="pz-text-muted"] .pcr-button { --pcr-color: var(--pz-text-muted); }
+.style-settings-container .setting-item[data-id="pz-text-faint"] .pcr-button { --pcr-color: var(--pz-text-faint); }
+.style-settings-container .setting-item[data-id="pz-accent-mid"] .pcr-button { --pcr-color: var(--pz-accent-mid); }
+.style-settings-container .setting-item[data-id="pz-accent-2"] .pcr-button { --pcr-color: var(--pz-accent-2); }
+.style-settings-container .setting-item[data-id="pz-unresolved"] .pcr-button { --pcr-color: var(--pz-unresolved); }
+.style-settings-container .setting-item[data-id="pz-code-function"] .pcr-button { --pcr-color: var(--pz-code-function); }
+.style-settings-container .setting-item[data-id="pz-code-keyword"] .pcr-button { --pcr-color: var(--pz-code-keyword); }
+.style-settings-container .setting-item[data-id="pz-code-string"] .pcr-button { --pcr-color: var(--pz-code-string); }
+.style-settings-container .setting-item[data-id="pz-code-value"] .pcr-button { --pcr-color: var(--pz-code-value); }
+.style-settings-container .setting-item[data-id="pz-c1-bg-0"] .pcr-button { --pcr-color: var(--pz-c1-bg-0, #161a1f); }
+.style-settings-container .setting-item[data-id="pz-c1-sidebar"] .pcr-button { --pcr-color: var(--pz-c1-sidebar, var(--pz-c1-bg-0, #161a1f)); }
+.style-settings-container .setting-item[data-id="pz-c1-bg-1"] .pcr-button { --pcr-color: var(--pz-c1-bg-1, #1b1e22); }
+.style-settings-container .setting-item[data-id="pz-c1-bg-2"] .pcr-button { --pcr-color: var(--pz-c1-bg-2, #212427); }
+.style-settings-container .setting-item[data-id="pz-c1-bg-3"] .pcr-button { --pcr-color: var(--pz-c1-bg-3, #2b2f32); }
+.style-settings-container .setting-item[data-id="pz-c1-line"] .pcr-button { --pcr-color: var(--pz-c1-line, #414a4c); }
+.style-settings-container .setting-item[data-id="pz-c1-line-strong"] .pcr-button { --pcr-color: var(--pz-c1-line-strong, #4b5558); }
+.style-settings-container .setting-item[data-id="pz-c1-text"] .pcr-button { --pcr-color: var(--pz-c1-text, #d6dce2); }
+.style-settings-container .setting-item[data-id="pz-c1-text-muted"] .pcr-button { --pcr-color: var(--pz-c1-text-muted, #98a1a8); }
+.style-settings-container .setting-item[data-id="pz-c1-text-faint"] .pcr-button { --pcr-color: var(--pz-c1-text-faint, #646d74); }
+.style-settings-container .setting-item[data-id="pz-c1-accent-mid"] .pcr-button { --pcr-color: var(--pz-c1-accent-mid, #3bb8e2); }
+.style-settings-container .setting-item[data-id="pz-c1-accent-2"] .pcr-button { --pcr-color: var(--pz-c1-accent-2, #59e7df); }
+.style-settings-container .setting-item[data-id="pz-c1-unresolved"] .pcr-button { --pcr-color: var(--pz-c1-unresolved, #c97a7a); }
+.style-settings-container .setting-item[data-id="pz-c1-code-function"] .pcr-button { --pcr-color: var(--pz-c1-code-function, #74b8f5); }
+.style-settings-container .setting-item[data-id="pz-c1-code-keyword"] .pcr-button { --pcr-color: var(--pz-c1-code-keyword, #e5739a); }
+.style-settings-container .setting-item[data-id="pz-c1-code-string"] .pcr-button { --pcr-color: var(--pz-c1-code-string, #7fc99a); }
+.style-settings-container .setting-item[data-id="pz-c1-code-value"] .pcr-button { --pcr-color: var(--pz-c1-code-value, #d9a066); }
+.style-settings-container .setting-item[data-id="pz-c2-bg-0"] .pcr-button { --pcr-color: var(--pz-c2-bg-0, #161a1f); }
+.style-settings-container .setting-item[data-id="pz-c2-sidebar"] .pcr-button { --pcr-color: var(--pz-c2-sidebar, var(--pz-c2-bg-0, #161a1f)); }
+.style-settings-container .setting-item[data-id="pz-c2-bg-1"] .pcr-button { --pcr-color: var(--pz-c2-bg-1, #1b1e22); }
+.style-settings-container .setting-item[data-id="pz-c2-bg-2"] .pcr-button { --pcr-color: var(--pz-c2-bg-2, #212427); }
+.style-settings-container .setting-item[data-id="pz-c2-bg-3"] .pcr-button { --pcr-color: var(--pz-c2-bg-3, #2b2f32); }
+.style-settings-container .setting-item[data-id="pz-c2-line"] .pcr-button { --pcr-color: var(--pz-c2-line, #414a4c); }
+.style-settings-container .setting-item[data-id="pz-c2-line-strong"] .pcr-button { --pcr-color: var(--pz-c2-line-strong, #4b5558); }
+.style-settings-container .setting-item[data-id="pz-c2-text"] .pcr-button { --pcr-color: var(--pz-c2-text, #d6dce2); }
+.style-settings-container .setting-item[data-id="pz-c2-text-muted"] .pcr-button { --pcr-color: var(--pz-c2-text-muted, #98a1a8); }
+.style-settings-container .setting-item[data-id="pz-c2-text-faint"] .pcr-button { --pcr-color: var(--pz-c2-text-faint, #646d74); }
+.style-settings-container .setting-item[data-id="pz-c2-accent-mid"] .pcr-button { --pcr-color: var(--pz-c2-accent-mid, #3bb8e2); }
+.style-settings-container .setting-item[data-id="pz-c2-accent-2"] .pcr-button { --pcr-color: var(--pz-c2-accent-2, #59e7df); }
+.style-settings-container .setting-item[data-id="pz-c2-unresolved"] .pcr-button { --pcr-color: var(--pz-c2-unresolved, #c97a7a); }
+.style-settings-container .setting-item[data-id="pz-c2-code-function"] .pcr-button { --pcr-color: var(--pz-c2-code-function, #74b8f5); }
+.style-settings-container .setting-item[data-id="pz-c2-code-keyword"] .pcr-button { --pcr-color: var(--pz-c2-code-keyword, #e5739a); }
+.style-settings-container .setting-item[data-id="pz-c2-code-string"] .pcr-button { --pcr-color: var(--pz-c2-code-string, #7fc99a); }
+.style-settings-container .setting-item[data-id="pz-c2-code-value"] .pcr-button { --pcr-color: var(--pz-c2-code-value, #d9a066); }
 
 /* Modal backdrop a touch darker so panels read as elevated. */
 .theme-dark .modal-bg { background: rgba(10, 12, 15, 0.55); }

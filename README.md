@@ -25,6 +25,14 @@ and Code highlighting, with a reset arrow to go back to the default. Colours rip
 background and the sidebars follow (unless you set Sidebars separately), and hover tints, highlights and
 scrollbars are mixed from their base colours.
 
+**Palettes.** The **Palette** dropdown at the top switches every colour at once: *Pizdec* (default), *Navy*
+(navy base, magenta pops, yellow keywords), *Cyberpunk* (violet-black, neon cyan and hot pink, glowing
+headings; pairs well with Accent color `#ff2a6d`), or **My palette 1 / 2**, your own. Each of those has its own section
+at the bottom of the page (collapsed); it starts as a copy of the Pizdec colours, so change only the ones you want.
+The pickers at the top still apply on top of whichever palette is active; reset them to see the palette as it is.
+To back a palette up or move it to another device, use Style Settings' **Export** on the Pizdec Dark section and
+**Import** it there.
+
 The main accent (links, tags, buttons, selection) is Obsidian's own **Settings → Appearance → Accent color**;
 the theme's default is `#1e88e5`.
 
