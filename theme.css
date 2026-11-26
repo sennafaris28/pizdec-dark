@@ -1060,4 +1060,5 @@ settings:
 .theme-dark .nk-card-modal .nk-card-editor-host,
 .theme-dark .nk-card-modal .nk-card-body {
   background: var(--pz-bg-0);
+  box-shadow: none; /* same level as the modal, nothing to lift it from */
 }
