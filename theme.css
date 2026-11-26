@@ -605,8 +605,8 @@ settings:
 :is(.pz-palette-cyberpunk, .pz-glow) .markdown-rendered :is(h1, h2, h3),
 :is(.pz-palette-cyberpunk, .pz-glow) .cm-s-obsidian :is(.cm-header-1, .cm-header-2, .cm-header-3),
 :is(.pz-palette-cyberpunk, .pz-glow) .inline-title {
-  text-shadow: 0 0 6px color-mix(in srgb, var(--pz-accent-mid) 55%, transparent),
-               0 0 18px color-mix(in srgb, var(--pz-accent-mid) 25%, transparent);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--pz-glow, var(--pz-accent-mid)) 55%, transparent),
+               0 0 18px color-mix(in srgb, var(--pz-glow, var(--pz-accent-mid)) 25%, transparent);
 }
 
 /* My palette 1 / 2 — colours from their own Style Settings pickers; unset ones
