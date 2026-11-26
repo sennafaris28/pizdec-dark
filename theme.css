@@ -609,6 +609,25 @@ settings:
                0 0 18px color-mix(in srgb, var(--pz-glow, var(--pz-accent-mid)) 25%, transparent);
 }
 
+/* Neon extras for glow palettes: NoteBoard card titles (and the card modal
+   title) glow like headings, and each card gets a glowing outline. */
+body:is(.pz-palette-cyberpunk, .pz-glow) {
+  --pz-glow-c: var(--pz-glow, var(--pz-accent-mid));
+}
+body:is(.pz-palette-cyberpunk, .pz-glow) .nk-card-title-text,
+body:is(.pz-palette-cyberpunk, .pz-glow) .nk-card-modal input.nk-card-modal-title {
+  text-shadow: 0 0 5px color-mix(in srgb, var(--pz-glow-c) 50%, transparent),
+               0 0 14px color-mix(in srgb, var(--pz-glow-c) 22%, transparent);
+}
+body:is(.pz-palette-cyberpunk, .pz-glow) .nk-card {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--pz-glow-c) 45%, transparent),
+              0 0 10px color-mix(in srgb, var(--pz-glow-c) 22%, transparent);
+}
+body:is(.pz-palette-cyberpunk, .pz-glow) .nk-card:hover {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--pz-glow-c) 75%, transparent),
+              0 0 16px color-mix(in srgb, var(--pz-glow-c) 38%, transparent);
+}
+
 /* My palette 1 / 2 — colours from their own Style Settings pickers; unset ones
    fall back to the Pizdec defaults (Sidebars follows Editor background). */
 .pz-palette-custom1 {
