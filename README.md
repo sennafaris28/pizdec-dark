@@ -48,7 +48,8 @@ the theme's default is `#1e88e5`.
 
 If the [NoteBoard](https://github.com/sennafaris28/noteboard) plugin (1.1.0+) is installed, the
 theme also styles the board: `#161a1f` base, `#212427` columns and panels, `#414a4c` cards and
-fields, and cyan "today" markers. Quest colours stay your own picks. Without the plugin those
+fields, and cyan "today" markers. On glow palettes (Cyberpunk, or your own with Neon glow on), card
+titles on the board and in Journey glow like headings. Quest colours stay your own picks. Without the plugin those
 variables do nothing.
 
 ## Install
